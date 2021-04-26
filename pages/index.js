@@ -45,7 +45,6 @@ export default function Home({ countries }) {
               // Dynamically load libraries
               const Fuse = (await import('fuse.js')).default;
               const _ = (await import('lodash')).default;
-              const moment = await (await import('moment')).default;
 
               const fuse = new Fuse(countries, {
                 keys: ['name'],
@@ -64,7 +63,6 @@ export default function Home({ countries }) {
               // Fake analytics hit
               console.info({
                 searchedAt: _.now(),
-                searchedDate: moment().format('MMMM Do YYYY, h:mm:ss a'),
               });
             }}
           />
